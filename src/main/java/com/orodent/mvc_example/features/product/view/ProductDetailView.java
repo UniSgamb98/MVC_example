@@ -1,14 +1,13 @@
-package com.orodent.mvc_example.view;
+package com.orodent.mvc_example.features.product.view;
 
-import com.orodent.mvc_example.view.components.AppHeader;
+import com.orodent.mvc_example.core.components.AppHeader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.geometry.Pos;
 
-public class ProductDetailView {
+public class ProductDetailView extends VBox{
 
-    private final VBox root;
     private final Label productLabel;
     private final Button backButton;
     private final AppHeader header;
@@ -25,10 +24,10 @@ public class ProductDetailView {
         content.setAlignment(Pos.CENTER);
         content.getStyleClass().add("container");
 
-        root = new VBox(10, header.getRoot(), content);
+        this.getChildren().addAll(header, content);
+        this.setSpacing(10);
     }
 
-    public VBox getRoot() { return root; }
     public Label getProductLabel() { return productLabel; }
     public Button getBackButton() { return backButton; }
     public AppHeader getHeader() { return header; }

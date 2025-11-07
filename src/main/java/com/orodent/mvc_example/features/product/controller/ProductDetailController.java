@@ -1,9 +1,10 @@
-package com.orodent.mvc_example.controller;
+package com.orodent.mvc_example.features.product.controller;
 
 
-import com.orodent.mvc_example.model.Product;
-import com.orodent.mvc_example.model.ProductService;
-import com.orodent.mvc_example.view.ProductDetailView;
+import com.orodent.mvc_example.app.AppController;
+import com.orodent.mvc_example.features.product.model.Product;
+import com.orodent.mvc_example.features.product.service.ProductService;
+import com.orodent.mvc_example.features.product.view.ProductDetailView;
 
 public class ProductDetailController {
 
@@ -16,7 +17,7 @@ public class ProductDetailController {
         this.view = view;
         this.appController = appController;
 
-        view.getProductLabel().setText("Hai selezionato: " + product.getName());
+        view.getProductLabel().setText("Hai selezionato: " + product.name());
 
         // Pulsanti
         view.getBackButton().setOnAction(e -> appController.showProductList());

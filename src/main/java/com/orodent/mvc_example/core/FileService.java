@@ -1,0 +1,41 @@
+package com.orodent.mvc_example.core;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.orodent.mvc_example.features.product.model.Product;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.List;
+
+public class FileService {
+
+    private static final Gson gson = new Gson();
+    private static final Path FILE_PATH = Path.of("products.json");
+
+    public static void saveProducts(List<Product> products) {
+        try (FileWriter writer = new FileWriter(FILE_PATH.toFile())) {
+            gson.toJson(products, writer);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static List<Product> loadProducts() {
+        try {
+            if (!Files.exists(FILE_PATH)) return List.of();
+
+            Type listType = new TypeToken<List<Product>>() {}.getType();
+            FileReader reader = new FileReader(FILE_PATH.toFile());
+            return gson.fromJson(reader, listType);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return List.of();
+        }
+    }
+}

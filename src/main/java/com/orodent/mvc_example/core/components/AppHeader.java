@@ -1,4 +1,4 @@
-package com.orodent.mvc_example.view.components;
+package com.orodent.mvc_example.core.components;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -6,31 +6,31 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
-public class AppHeader {
+public class AppHeader extends HBox {
 
-    private final HBox root;
-    private final Label titleLabel;
     private final Button homeButton;
+    private final Button orderButton;
 
     public AppHeader(String title) {
-        titleLabel = new Label(title);
+        Label titleLabel = new Label(title);
         titleLabel.getStyleClass().add("header-title");
 
         homeButton = new Button("🏠 Home");
+        orderButton = new Button("Orders");
         homeButton.getStyleClass().add("header-button");
+        orderButton.getStyleClass().add("header-button");
 
-        root = new HBox();
-        root.setAlignment(Pos.CENTER_LEFT);
-        root.setSpacing(10);
-        root.setPadding(new Insets(10, 20, 10, 20));
-        root.getStyleClass().add("header-bar");
+        setAlignment(Pos.CENTER_LEFT);
+        setSpacing(10);
+        setPadding(new Insets(10, 20, 10, 20));
+        getStyleClass().add("header-bar");
 
         HBox spacer = new HBox();
         HBox.setHgrow(spacer, javafx.scene.layout.Priority.ALWAYS);
 
-        root.getChildren().addAll(titleLabel, spacer, homeButton);
+        this.getChildren().addAll(titleLabel, spacer, orderButton, homeButton);
     }
 
-    public HBox getRoot() { return root; }
     public Button getHomeButton() { return homeButton; }
+    public Button getOrdersButton() { return  orderButton; }
 }

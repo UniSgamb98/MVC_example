@@ -1,6 +1,5 @@
-package com.orodent.mvc_example;
+package com.orodent.mvc_example.app;
 
-import com.orodent.mvc_example.controller.AppController;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
