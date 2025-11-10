@@ -21,7 +21,6 @@ public class ProductDetailController {
 
         // Pulsanti
         view.getBackButton().setOnAction(e -> appController.showProductList());
-        view.getHeader().getHomeButton().setOnAction(e -> appController.showProductList());
     }
 
     public ProductDetailView getView() {

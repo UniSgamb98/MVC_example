@@ -1,3 +1,11 @@
+/* Tutte le proprietà css sono disponibili nella documentazione ufficiale del SDK in utilizzo. In questo caso uso
+SDK 21 e le proprietà sono reperibili al link
+https://openjfx.io/javadoc/21/javafx.graphics/javafx/scene/doc-files/cssref.html
+
+Nota bene: Non tutti i nodi hanno tutti i parametri elencati in quanto molti vengono ereditati. Ad esempio Button
+eredita tutti i parametri da ButtonBase, Labeled, Control, Region, Parent, Node.
+In ogni caso se leggete bene potete risalire a tutta la scala gerarchica.
+*/
 .root {
     -fx-font-family: "Segoe UI", "Roboto", sans-serif;
     -fx-background-color: #2b2b2b;

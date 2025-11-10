@@ -13,12 +13,16 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class FileService {
-
     private static final Gson gson = new Gson();
-    private static final Path FILE_PATH = Path.of("products.json");
+    private static final Path PRODUCTS_FILE_PATH = Path.of("products.json");
+
+    /*
+    questa classe si occupa di caricare e salvare i dati in file Json e non chiedetemi nulla perchè li ho copiati
+    pari paro da internet.
+     */
 
     public static void saveProducts(List<Product> products) {
-        try (FileWriter writer = new FileWriter(FILE_PATH.toFile())) {
+        try (FileWriter writer = new FileWriter(PRODUCTS_FILE_PATH.toFile())) {
             gson.toJson(products, writer);
         } catch (IOException e) {
             e.printStackTrace();
@@ -27,10 +31,10 @@ public class FileService {
 
     public static List<Product> loadProducts() {
         try {
-            if (!Files.exists(FILE_PATH)) return List.of();
+            if (!Files.exists(PRODUCTS_FILE_PATH)) return List.of();
 
             Type listType = new TypeToken<List<Product>>() {}.getType();
-            FileReader reader = new FileReader(FILE_PATH.toFile());
+            FileReader reader = new FileReader(PRODUCTS_FILE_PATH.toFile());
             return gson.fromJson(reader, listType);
 
         } catch (Exception e) {

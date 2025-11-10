@@ -6,6 +6,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 
+
+/*
+AppHeader è una componente riutilizzabile dell'applicazione ed è contenuto nella visto di tutte le views presenti.
+Di fatto è una classe che svolge la funzione di View, quindi è presente solo il layout. I metodi presenti servono per
+esporre ai controller i tasti in modo da poter assegnare loro una funzione.
+ */
 public class AppHeader extends HBox {
 
     private final Button homeButton;
