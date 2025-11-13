@@ -12,7 +12,9 @@ public class OrderListView extends VBox {
     private final Button addButton = new Button("Nuovo Ordine");
     private final AppHeader header;
 
-
+    /*
+    Semplice View dove gestisco il layout. Lo stile viene gestito dal css in "styles.css".
+     */
     public OrderListView() {
         header = new AppHeader("Elenco Ordini");
         this.getChildren().addAll(header, listView, addButton);

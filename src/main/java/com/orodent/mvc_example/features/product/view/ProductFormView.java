@@ -14,6 +14,10 @@ public class ProductFormView extends VBox {
     private final Button cancelButton;
     private final AppHeader header;
 
+    /*
+    Semplice View dove gestisco il layout. Lo stile viene gestito dal css in "styles.css".
+     */
+
     public ProductFormView() {
         header = new AppHeader("Aggiungi Prodotto");
 

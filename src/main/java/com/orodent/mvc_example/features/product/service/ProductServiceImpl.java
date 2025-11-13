@@ -6,6 +6,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
+
+    /*
+    Questo ServiceImplementation fa da seed. In quanto l'AppController verifica la presenza del file products.json e in
+    caso mancasse usa questi dati.
+     */
     @Override
     public List<Product> getAll() {
         return Arrays.asList(

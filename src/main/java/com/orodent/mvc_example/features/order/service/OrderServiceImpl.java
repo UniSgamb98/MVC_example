@@ -9,6 +9,9 @@ public class OrderServiceImpl implements OrderService {
 
     private final List<Order> orders = new ArrayList<>();
 
+    /*
+    Una ServiceImplementation generica.
+     */
     @Override
     public List<Order> getAll() {
         return orders;

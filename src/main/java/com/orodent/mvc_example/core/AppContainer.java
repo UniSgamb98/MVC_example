@@ -11,7 +11,9 @@ public class AppContainer {
     private static OrderService orderService = new OrderServiceImpl();
 
     /*
-    Questa classe si occupa di eseguire i Service Injection per rendere la sostituzione dei dati.
+    Questa classe si occupa di eseguire i Service Injection. Questa classe diventa molto utile nel caso in cui ho
+    bisogno di fare dei test e devo sostituire i dati. Per sostituire i dati basta cambiare la parte dinamica dei vari
+    service con una diversa ServiceImpl.
      */
 
     //Service Injection per i prodotti.

@@ -14,6 +14,10 @@ public class ProductListView extends VBox{
     private final Button addButton;
     private final AppHeader header;
 
+    /*
+    Semplice View dove gestisco il layout. Lo stile viene gestito dal css in "styles.css".
+     */
+
     public ProductListView() {
         header = new AppHeader("Gestione Prodotti");
 

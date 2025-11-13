@@ -12,6 +12,10 @@ public class ProductDetailView extends VBox{
     private final Button backButton;
     private final AppHeader header;
 
+    /*
+    Semplice View dove gestisco il layout. Lo stile viene gestito dal css in "styles.css".
+     */
+
     public ProductDetailView() {
         header = new AppHeader("Dettaglio Prodotto");
 

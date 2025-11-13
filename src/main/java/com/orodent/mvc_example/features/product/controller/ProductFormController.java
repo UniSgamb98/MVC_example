@@ -29,7 +29,7 @@ public class ProductFormController {
             return;
         }
 
-        products.add(new Product(name)); // UI si aggiorna automaticamente
+        products.add(new Product(name)); // UI si aggiorna automaticamente in quanto ObservableList
         FileService.saveProducts(products);
         appController.showProductList();
     }
